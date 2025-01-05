@@ -5,38 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - MI6 Agent Portal</title>
   <link href="css/dashboard.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For Chart.js -->
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">MI6 Dashboard</a>
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>MI6 Agent Portal</h3>
+        <button id="sidebarToggle" class="toggle-btn">☰</button>
+      </div>
+      <ul>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="personal-details.html">Personal Details</a></li>
+        <li><a href="mission-details.html">Mission Details</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
     </div>
-  </nav>
 
-  <div class="container mt-5">
-    <h2 class="mb-4">Agent Dashboard</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Personal Details</h5>
-            <p class="card-text">View and update your personal information.</p>
-            <a href="personal-details.html" class="btn btn-primary">View Profile</a>
-          </div>
+    <!-- Main Content Section -->
+    <div class="main-content" id="mainContent">
+      <div class="header">
+        <div class="welcome-section">
+          <h2>Welcome, <span id="agentName">Agent</span></h2>
+          <p><strong>Agent ID:</strong> <span id="agentId"></span></p>
         </div>
       </div>
-      <div class="col-md-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Mission Details</h5>
-            <p class="card-text">Access your current assignments.</p>
-            <a href="mission-details.html" class="btn btn-primary">View Missions</a>
+
+      <!-- Dashboard Widgets Section -->
+      <div class="dashboard-widgets">
+        <div class="widget-row">
+          <div class="widget">
+            <div class="card mission-summary">
+              <h4>Mission Summary</h4>
+              <p><strong>Assigned Mission:</strong> <span id="missionAssigned"></span></p>
+              <p><strong>Status:</strong> <span id="missionStatus"></span></p>
+              <p><strong>Deadline:</strong> <span id="missionDeadline"></span></p>
+              <button onclick="abortMission()">Abort Mission</button>
+            </div>
+          </div>
+          <div class="widget">
+            <div class="card performance-summary">
+              <h4>Performance Overview</h4>
+              <canvas id="performanceChart"></canvas> <!-- Chart for Performance -->
+            </div>
+          </div>
+          <div class="widget">
+            <div class="card alerts">
+              <h4>Important Alerts</h4>
+              <ul id="alertsList">
+                <!-- Alerts will be dynamically filled -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget-row">
+          <div class="widget">
+            <div class="card upcoming-missions">
+              <h4>Upcoming Missions</h4>
+              <ul id="upcomingMissionsList">
+                <!-- Upcoming missions will be dynamically filled -->
+              </ul>
+            </div>
+          </div>
+          <div class="widget">
+            <div class="card agent-status">
+              <h4>Agent Status</h4>
+              <p><strong>Health:</strong> <span id="agentHealth"></span></p>
+              <p><strong>Rank:</strong> <span id="rank"></span></p>
+              <p><strong>Success Rate:</strong> <span id="missionSuccessRate"></span></p>
+              <button onclick="abortMission()">Abort Mission</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="js/script.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
