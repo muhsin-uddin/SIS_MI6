@@ -1,0 +1,43 @@
+[
+    {
+      "agentId": "1234",
+      "name": "John Doe",
+      "rank": "Agent",
+      "missionAssigned": "Operation Blackstorm",
+      "lastLogin": "2025-01-04T15:30:00",
+      "status": "Active",
+      "password": "1234",  
+      "email": "john.doe@mi6.com"
+    },
+    {
+      "agentId": "AGT00002",
+      "name": "Jane Smith",
+      "rank": "Field Agent",
+      "missionAssigned": "Operation Eagle Eye",
+      "lastLogin": "2025-01-05T08:15:00",
+      "status": "Active",
+      "password": "securePass456",  
+      "email": "jane.smith@mi6.com"
+    },
+    {
+      "agentId": "AGT00003",
+      "name": "Mark Thompson",
+      "rank": "Specialist",
+      "missionAssigned": "Operation Phantom",
+      "lastLogin": "2025-01-03T10:00:00",
+      "status": "Inactive",
+      "password": "special1234",  
+      "email": "mark.thompson@mi6.com"
+    },
+    {
+      "agentId": "AGT00004",
+      "name": "Sarah Johnson",
+      "rank": "Agent",
+      "missionAssigned": "Operation Midnight",
+      "lastLogin": "2025-01-02T13:45:00",
+      "status": "Active",
+      "password": "sarahSecure!@123", 
+      "email": "sarah.johnson@mi6.com"
+    }
+  ]
+  
