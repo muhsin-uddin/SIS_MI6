@@ -7,22 +7,56 @@
   <link href="css/personal-details.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">Personal Details</h2>
-
-    <div id="personalInfo" class="personal-info">
-      <p><strong>Agent ID:</strong> <span id="agentId"></span></p>
-      <p><strong>Name:</strong> <span id="name"></span></p>
-      <p><strong>Rank:</strong> <span id="rank"></span></p>
-      <p><strong>Mission Assigned:</strong> <span id="missionAssigned"></span></p>
-      <p><strong>Last Login:</strong> <span id="lastLogin"></span></p>
-      <p><strong>Status:</strong> <span id="status"></span></p>
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>MI6 Agent Portal</h3>
+        <button id="sidebarToggle" class="toggle-btn">☰</button>
+      </div>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="personal-details.html" class="active">Personal Details</a></li>
+        <li><a href="mission-details.html">Mission Details</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
     </div>
 
-    <button class="btn btn-danger mt-4" onclick="logout()">Logout</button>
+    <!-- Main Content Section -->
+    <div class="main-content">
+      <div class="header">
+        <h2>Personal Details</h2>
+      </div>
+
+      <!-- Personal Info -->
+      <div class="personal-info">
+        <h4>Agent Information</h4>
+        <p><strong>Agent ID:</strong> <span id="agentId"></span></p>
+        <p><strong>Rank:</strong> <span id="rank"></span></p>
+        <p><strong>Health Status:</strong> <span id="healthStatus"></span></p>
+      </div>
+
+      <!-- Personal Missions -->
+      <div class="personal-missions">
+        <h4>Mission History</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Mission ID</th>
+              <th>Mission Name</th>
+              <th>Status</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+            </tr>
+          </thead>
+          <tbody id="missionHistory">
+            <!-- Mission details will go here -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
   </div>
 
   <script src="js/personal-details.js"></script>
 </body>
 </html>
-
